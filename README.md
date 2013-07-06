@@ -7,6 +7,8 @@ It keeps the provider and sid off of the redirect uri, and puts them in the stat
 It also lets you customize the scopes, in case you want access to other Facebook data.  And it doesn't manipulate
 the response fields - so you get back exactly what facebook provided.
 
+Facebook Reference: http://developers.facebook.com/docs/howtos/login/server-side-login/
+
 ## Setup
 
  1. Setup your Facebook App using the [Facebook developer apps site](https://developers.facebook.com/apps).
@@ -34,7 +36,8 @@ This is needed because Facebook requires that any extra querystring parameters f
 redirect be packed into a single parameter called `state`.  Since `OAuthWebSecurity` needs
 two parameters, `__provider__` and `__sid__` - we have to rewrite the url.
 
-Reference: http://developers.facebook.com/docs/howtos/login/server-side-login/
+**Note:** The `RewriteRequest` method will unpack the `state` parameter and place its contents back into the regular querystring.
+So if you are looking for a state value such as `ReturnUrl`, you will find it has been moved to `Request.QueryString["ReturnUrl"]`.
 
 
 ## Disclaimer
