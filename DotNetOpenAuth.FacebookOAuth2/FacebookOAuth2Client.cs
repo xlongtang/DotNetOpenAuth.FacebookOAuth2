@@ -86,12 +86,14 @@ namespace DotNetOpenAuth.FacebookOAuth2
 
         protected override Uri GetServiceLoginUrl(Uri returnUrl)
         {
+            var state = string.IsNullOrEmpty(returnUrl.Query) ? string.Empty : returnUrl.Query.Substring(1);
+
             return BuildUri(AuthorizationEndpoint, new NameValueCollection
                 {
                     { "client_id", _appId },
                     { "scope", string.Join(" ", _requestedScopes) },
                     { "redirect_uri", returnUrl.GetLeftPart(UriPartial.Path) },
-                    { "state", returnUrl.Query.Substring(1) },
+                    { "state", state },
                 });
         }
 
