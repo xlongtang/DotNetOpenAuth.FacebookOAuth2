@@ -1,7 +1,7 @@
 DotNetOpenAuth OAuth2 Client for Facebook
 ======================================
 
-This is a slightly improved implementation over the default Facebook client that ships with DNOA.
+This is a slightly improved implementation over the default Facebook client that ships with DNOA as used in MVC4 (VS2012).
 It keeps the provider and sid off of the redirect uri, and puts them in the state parameter where they belong.
 
 It also lets you customize the scopes, in case you want access to other Facebook data.  And it doesn't manipulate
