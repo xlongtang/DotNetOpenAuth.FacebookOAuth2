@@ -84,6 +84,7 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TaobaoOAuth2Client.cs" />
